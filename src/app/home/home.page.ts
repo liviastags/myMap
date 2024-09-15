@@ -19,12 +19,12 @@ export class HomePage implements OnInit {
 
 
   public async ngOnInit() {
-    // const position = await Geolocation.getCurrentPosition();
-    // this.longitude = position.coords.longitude;
-    // this.latitude = position.coords.latitude;
+    const position = await Geolocation.getCurrentPosition();
+    this.longitude = position.coords.longitude;
+    this.latitude = position.coords.latitude;
 
-    this.longitude = 106.87844308161512;
-    this.latitude = -6.194248327586573;
+    // this.longitude = 106.87844308161512;
+    // this.latitude = -6.194248327586573;
 
     const map = new Map({
       basemap: 'topo-vector'
