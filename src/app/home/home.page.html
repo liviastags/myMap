@@ -1,8 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-     Enya's Map
+      Enya's Map
     </ion-title>
+    <!-- Place the basemap selection in the top right corner -->
+    <ion-select [(ngModel)]="selectedBasemap" (ionChange)="changeBasemap()" interface="popover" slot="end">
+      <ion-select-option value="topo-vector">Topographic</ion-select-option>
+      <ion-select-option value="streets">Streets</ion-select-option>
+      <ion-select-option value="satellite">Satellite</ion-select-option>
+      <ion-select-option value="hybrid">Hybrid</ion-select-option>
+      <ion-select-option value="dark-gray">Dark Gray</ion-select-option>
+    </ion-select>
   </ion-toolbar>
 </ion-header>
 
@@ -13,5 +21,5 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container"></div>
+  <div id="container" style="height: 100%; width: 100%;"></div>
 </ion-content>
